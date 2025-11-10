@@ -1,0 +1,152 @@
+/* 1. RESET BÁSICO */
+* {
+    /* Eliminamos el margen y el relleno predeterminado del navegador */
+    margin: 0;
+    padding: 0;
+    /* Usamos el modelo de caja 'border-box' para que los bordes y el padding no
+       aumenten el tamaño total de la caja. ¡Esencial para layouts! */
+    box-sizing: border-box;
+}
+
+/* 2. ESTILO DEL BODY (FONDO Y FUENTE) */
+body {
+    background-color: white; /* Fondo blanco */
+    color: black; /* Texto negro */
+    font-family: monospace; /* Una fuente simple y "marcada" */
+    padding: 20px; /* Un poco de espacio alrededor de todo el contenido */
+}
+
+/* 3. CONTENEDOR PRINCIPAL (El que centra todo) */
+.contenedor-principal {
+    /* Define un ancho máximo para que no se extienda demasiado en monitores grandes */
+    max-width: 1400px;
+    /* CENTRADO MÁGICO: centra el contenedor en la pantalla */
+    margin: 0 auto;
+    /* Dibuja el borde principal de la página */
+	border: 3px solid black; /*border: none;*/
+    /* Le da un pequeño margen inferior para que respire */
+    margin-bottom: 20px;
+}
+/* 1. ESTILO DE LA CABECERA COMPLETA */
+.seccion-cabecera {
+    /* Define un margen para separarla visualmente del resto del contenido */
+    margin: 20px;
+    border: none; /* Borde simple = border: 3px solid black;  */
+    padding: 10px;
+}
+
+/* 2. LA CAJA QUE CONTIENE EL TEXTO (usamos Flexbox para centrar) */
+.caja-cabecera {
+    display: flex;
+    flex-direction: column; /* Coloca el H1 y el P uno debajo del otro */
+    align-items: center; /* Centra horizontalmente el contenido de la caja */
+    text-align: center;
+    padding: 15px 0; /* Relleno vertical para que respire */
+    
+    /* EL EFECTO DE SOMBRA "MARCADA" */
+    /* Crea la sombra negra que se ve debajo del rectángulo blanco */
+    box-shadow: -10px 10px 0 black;
+    border: 3px solid black;
+    background-color: white; /* Aseguramos que sea blanco para el contraste */
+}
+
+/* 3. ESTILOS DE FUENTE ESPECÍFICOS (usando tus ideas) */
+.caja-cabecera h1 {
+    /* Arial Black o similar */
+    font-family: "Arial Black", Arial, sans-serif;
+    font-size: 2.5em; /* Tamaño grande */
+    margin-bottom: 5px;
+}
+
+.caja-cabecera p {
+    font-size: 1.1em;
+}
+
+/* 1. ESTILO DEL CONTENEDOR DE NAVEGACIÓN (El rectángulo con borde) */
+.seccion-navegacion {
+    margin: 20px; /* Separación del encabezado */
+    border: 3px solid black; /* Borde simple de la sección */
+    box-shadow: -5px 5px 0 black; /* Sombra sutil, puedes ajustarla */
+    padding: 10px;
+    background-color: white;
+}
+
+/* 2. FLEXBOX: Alineación de los Ítems (UL) */
+.seccion-navegacion ul {
+    display: flex; /* CONVIERTE la lista en un CONTENEDOR FLEX */
+    list-style: none; /* Elimina las viñetas predeterminadas de la lista */
+    justify-content: space-around; /* DISTRIBUYE el espacio de manera uniforme entre los ítems */
+	/*flex-direction: column;*//**cacmbio de row, fila, a column, columna, horizontal o vertical*/
+    align-items: center; /* Asegura que los ítems estén alineados en el centro vertical */
+}
+
+/* 3. ESTILO DE LOS ENLACES (A) */
+.seccion-navegacion ul li a {
+    text-decoration: none; /* Quita el subrayado predeterminado de los enlaces */
+    color: black; /* Color del texto del enlace */
+	font-family: "Arial", Arial, sans-serif;
+    /*font-weight: bold;*/
+    padding: 5px 10px; /* Hace que el área clicable sea más grande */
+    /* Aquí podrías añadir un :hover para el modo creativo más adelante */
+}
+
+/* 1. ESTILO DE LA SECCIÓN CONTENEDORA */
+.seccion-textos-destacados {
+    margin: 20px;
+    padding: 10px;
+}
+
+/* 2. EL CONTENEDOR GRID: Define las columnas */
+.grid-contenedor {
+    display: grid; /* CONVIERTE el DIV en un CONTENEDOR GRID */
+    /* Define 3 columnas de igual ancho (1fr 1fr 1fr) */
+    grid-template-columns: 1fr 1fr 1fr; 
+    /* Espacio entre las cajas */
+    gap: 20px; 
+}
+
+/* 3. ESTILO DE CADA CAJA DE TEXTO */
+.caja-texto {
+    /* Mínimo de altura para que se vean */
+    min-height: 250px; 
+    
+    /* EL ESTILO DE BORDE Y SOMBRA QUE TE GUSTA */
+    border: 3px solid black;
+    box-shadow: -10px 10px 0 black; /* Ajusta la sombra a tu gusto aquí */
+    background-color: white;
+    
+    padding: 15px;
+    text-align: center;
+}
+/* ESTRUCTURA DE PÁGINAS INTERIORES (2 COLUMNAS) */
+.seccion-lectura-grid {
+    margin: 20px;
+    padding: 10px;
+    
+    display: grid;
+    /* Usamos FR para definir la proporción: Menú (1 parte) y Texto (3 partes) */
+    grid-template-columns: 1fr 3fr; 
+    gap: 20px; /* Espacio entre las columnas */
+}
+/* ATENCIÓN!!!!!! EN ESTA SECCIÓN COMIENZAN LOS ESTILOS DEL ARCHIVO textos.html*/
+
+/* ESTILO DEL MENÚ LOCAL (COLUMNA 3) */
+.menu-local-columna {
+    min-height: 500px;
+    border: 3px solid black;
+    box-shadow: -10px 10px 0 black; /* Misma sombra invertida */
+    padding: 15px;
+    background-color: white;
+}
+
+/* ESTILO DEL ÁREA DE TEXTO (COLUMNA 4) */
+.texto-desplegado-columna {
+    min-height: 500px;
+    border: 3px solid black;
+    box-shadow: -10px 10px 0 black;
+    padding: 20px;
+    background-color: white;
+    /* Configuración para que el texto sea más legible */
+    line-height: 1.6; 
+    font-size: 1.1em;
+}
