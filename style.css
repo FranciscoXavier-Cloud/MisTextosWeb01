@@ -149,4 +149,38 @@ body {
     /* Configuración para que el texto sea más legible */
     line-height: 1.6; 
     font-size: 1.1em;
-}
+}/*
+/* ======================================= */
+/* RESPONSIVIDAD: Media Queries para Móviles */
+/* ======================================= */
+
+/* Las reglas aquí dentro se aplicarán SOLO cuando el ancho de la pantalla sea de 768px o menos */
+@media screen and (max-width: 768px) {
+ 
+  /* AJUSTE GENERAL: Reducir el padding exterior */
+    body {
+        padding: 10px; /* Menos espacio en los bordes para móviles */
+    }
+
+    /* 1. SECCIÓN HOME (3 Columnas -> 1 Columna) */
+    .grid-contenedor {
+        /* CSS Grid es mágico: cambiamos la definición de 3 columnas a 1 */
+        grid-template-columns: 1fr; 
+        gap: 10px; /* Reducimos el espacio entre cajas */
+    }
+
+    /* 2. PÁGINAS INTERIORES (2 Columnas -> 1 Columna) */
+    .seccion-lectura-grid {
+        /* Cambiamos la definición de 1fr 3fr a 1 columna */
+        grid-template-columns: 1fr;
+        gap: 15px; 
+    }
+    
+    /* Ajuste de altura mínima: Se ve mejor en móvil */
+    .menu-local-columna, .texto-desplegado-columna {
+        min-height: auto; 
+    } 
+ 
+
+   
+} 
